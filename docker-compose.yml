@@ -19,7 +19,6 @@ services:
      - db
    volumes:
      - ./src:/var/www/html
-     - .:/vagrant
    env_file:
      - '.env.web'
    ports:
