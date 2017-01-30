@@ -50,4 +50,4 @@ Run the following commands to setup your database.
 docker exec -it web /bin/bash
 
 ## Viewing your page
-on your host open your browser connect to localhost:8080. There are already index.php with the a hello world example. Also if you run test.php it will show you your php info on the server.
+on your host open your browser connect to localhost:8080. There are already index.php with the a hello world example. Also if you run test.php it will show you your php info on the server. Opening db.php will test yoour database connectivity with the MYSQL container.
