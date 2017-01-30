@@ -5,11 +5,9 @@
 This was setup was designed to allow easy migration of existing applications into a docker configuration.   
 
 ## Requirements
-
 * [Docker Engine](https://docs.docker.com/installation/)
 * [Docker Compose](https://docs.docker.com/compose/)
 * [Docker Machine](https://docs.docker.com/machine/) (Mac and Windows only)
----
 
 ## What's inside
 * [Centos] (https://www.centos.org/)
