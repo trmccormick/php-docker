@@ -45,17 +45,13 @@ $ docker-compose up
       ```
 
 ## Setup Databases
-Run the following commands to setup your database. Only use seed if you are just testing.
+Run the following commands to setup your database.
 
+* Database import
 
 
 ## Running Bash on a container
 docker exec -it web /bin/bash
 
-<<<<<<< HEAD
 ## Viewing your page
 on your host open your browser connect to localhost:8080. There are already index.php with the a hello world example. Also if you run test.php it will show you your php info on the server.
-=======
-## Database import
-
->>>>>>> master
