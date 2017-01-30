@@ -40,9 +40,7 @@ This was setup was designed to allow easy migration of existing applications int
 
 Set up a Docker Machine and then run:
 
-```sh
 $ docker-compose up
-      ```
 
 ## Setup Databases
 Run the following commands to setup your database.
