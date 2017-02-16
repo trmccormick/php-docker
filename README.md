@@ -25,10 +25,10 @@ This was setup was designed to allow easy migration of existing applications int
 
   In production you will want to set more we used the following
 
-      MYSQL_ROOT_PASSWORD=root
-      MYSQL_DATABASE=image-ads_production
+      MYSQL_ROOT_PASSWORD=<root password>
+      MYSQL_DATABASE=<database name>
       MYSQL_USER=<username>
-      MYSQL_PASSWORD=<password>
+      MYSQL_PASSWORD=<user password>
 
   In your .env.web you will want to set your timezone for example I have set mine to the US Eastern.
 
