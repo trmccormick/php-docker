@@ -1,4 +1,4 @@
-# Webserver container for WVU Lib Engine API
+# Webserver container uses Centos7, Apache and PHP
 # Using Centos:latest base image
 # Version 1
 
