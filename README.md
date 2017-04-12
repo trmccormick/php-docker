@@ -17,7 +17,7 @@ This was setup was designed to allow easy migration of existing applications int
 * [GIT](https://git-scm.com/)
 
 ## Environment and Database settings
-  To set your environment you need to create .env.db and .env.web these will hold all your setting like password for your database and your secrets key.
+  To set your environment you need to create .env.db and .env.web these will hold all your settings like password for your database.
 
   In your .env.db if you are only doing development you can simply just create a file with just one line. I set mine to take empty passwords but if you want to set a password you can set it as you would in production with the instructions below.
 
