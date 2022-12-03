@@ -3,9 +3,11 @@ start.sh
 cleanup.sh
 
 # ignore our environment config files
-.env.db
-.env.web
+env
 
 # don't let these stupid things in the repo
 .DS_STORE
 .DS_Store
+
+# ignore mysql folder
+mysql

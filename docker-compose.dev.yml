@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   db:
    image: mysql:5.7
@@ -6,21 +6,21 @@ services:
    volumes:
      - ./mysql:/var/lib/mysql
    env_file:
-     - './env/.env.db'
+     - './env/.env.dev.db'
    ports:
      - "3306:3306"
   web:
     build: 
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: web
     links:
       - db
     volumes:
-      - ./src:/home/web
+      - ./src:/home/web   
     env_file:
-      - './env/.env.web'
+      - './env/.env.dev.web'
     ports:
       - "8080:80"
     depends_on:
-     - db
+      - db
