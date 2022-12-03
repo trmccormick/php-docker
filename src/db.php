@@ -1,11 +1,12 @@
 # in /var/www/html/db.php
 <?php
 
-// Could also use getenv('MYSQL_PORT_3306_TCP_ADDR')
-// But recommended to use the host entry which survives server restart
-$dsn = 'mysql:host='.gethostbyname('mysql');
-$usr = 'root';
-$pwd = '';
+$host = getenv("DATABASE_HOST");
+$port = getenv("DATABASE_PORT");
+$usr = getenv("DATABASE_USER");
+$pwd = getenv("DATABASE_PASSWORD");
+
+$dsn = 'mysql:host='.$host.';port='.$port;
 
 try {
     $dbh = new PDO($dsn, $usr, $pwd);

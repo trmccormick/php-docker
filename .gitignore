@@ -9,5 +9,5 @@ cleanup.sh
 .DS_STORE
 .DS_Store
 
-# ignore mysql folder
+# ignore mysql data folder
 mysql
