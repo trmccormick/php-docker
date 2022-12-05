@@ -24,7 +24,7 @@ services:
       - db
     volumes:
       - ./data/log:/home/web/public_html/data/log
-      - ./data/gitpulls:/tmp/gitpulls
+      - ./data/gitpulls:/tmp/git
       - ./src/public_html:/home/web/public_html   
     env_file:
       - './env/.env.dev.web'
