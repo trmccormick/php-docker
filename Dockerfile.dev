@@ -15,3 +15,9 @@ RUN apt-get update && apt-get install -y \
 COPY ./serverConfiguration/000-default.conf /etc/apache2/sites-available/
 
 EXPOSE 80
+
+ADD ./scripts/entrypoint.dev.sh /usr/bin/
+RUN chmod -v +x /usr/bin/entrypoint.dev.sh
+
+# Start the service
+ENTRYPOINT ["bash", "/usr/bin/entrypoint.dev.sh"]
