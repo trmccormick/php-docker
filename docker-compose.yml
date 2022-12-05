@@ -1,26 +1,36 @@
-version: '2'
+version: '3'
 services:
   db:
-   image: mysql:5.7
+   image: mysql/mysql-server:latest
    container_name: mysql
    volumes:
-     - ./mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
+      - ./SQLFiles/setup-docker.sql:/docker-entrypoint-initdb.d/setup-docker.sql
+      - ./serverConfiguration/mysql-config.cnf:/etc/mysql/conf.d/mysql-config.cnf
    env_file:
      - './env/.env.db'
    ports:
      - "3306:3306"
+   healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 30s
+      retries: 10
   web:
     build: 
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: web
     links:
       - db
     volumes:
-      - ./src:/home/web
+      - ./data/log:/home/web/data/log
+      - ./src:/home/web   
     env_file:
       - './env/.env.web'
     ports:
       - "8080:80"
     depends_on:
-     - db
+      - db
+
+volumes:
+  mysql:

@@ -23,6 +23,8 @@ services:
     links:
       - db
     volumes:
+      - ./data/log:/home/web/data/log
+      - ./data/gitpulls:/tmp/gitpulls
       - ./src:/home/web   
     env_file:
       - './env/.env.dev.web'
