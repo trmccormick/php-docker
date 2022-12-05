@@ -23,7 +23,7 @@ services:
     links:
       - db
     volumes:
-      - ./data/log:/home/web/data/log
+      - ./data/log:/home/web/public_html/data/log
       - ./data/gitpulls:/tmp/gitpulls
       - ./src/public_html:/home/web/public_html   
     env_file:
