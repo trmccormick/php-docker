@@ -1,17 +1,17 @@
-# Webserver container uses Centos7, Apache and PHP
-# Using Centos:latest base image
-# Version 1
+FROM php:5-apache
 
-FROM trmccormick/centos7-php
-MAINTAINER Tracy McCormick <tracy.alan.mccormick@gmail.com>
+WORKDIR /home/web
+ADD src /home/web/
 
-# Update image
-RUN yum -y update
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Add configuration file
-ADD src /var/www/html
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    vim \
+    git
+
+# Update apache site for our custom location 
+COPY ./000-default.conf /etc/apache2/sites-available/
+
 EXPOSE 80
-
-# Start the service
-CMD ["-D", "FOREGROUND"]
-ENTRYPOINT ["/usr/sbin/httpd"]

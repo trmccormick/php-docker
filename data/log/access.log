@@ -1,0 +1,1 @@
+192.168.208.1 - - [05/Dec/2022:09:15:46 -0500] "GET /phpinfo.php HTTP/1.1" 200 30175 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"

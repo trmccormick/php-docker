@@ -8,7 +8,7 @@ services:
       - ./SQLFiles/setup-docker.sql:/docker-entrypoint-initdb.d/setup-docker.sql
       - ./serverConfiguration/mysql-config.cnf:/etc/mysql/conf.d/mysql-config.cnf
    env_file:
-     - './env/.env.db'
+     - './env/.env.dev.db'
    ports:
      - "3306:3306"
    healthcheck:
@@ -24,9 +24,10 @@ services:
       - db
     volumes:
       - ./data/log:/home/web/data/log
-      - ./src:/home/web   
+      - ./data/gitpulls:/tmp/gitpulls
+      - ./src/public_html:/home/web/public_html   
     env_file:
-      - './env/.env.web'
+      - './env/.env.dev.web'
     ports:
       - "8080:80"
     depends_on:
