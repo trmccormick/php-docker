@@ -1,7 +1,7 @@
 FROM php:5-apache
 
 WORKDIR /home/web
-ADD src/public_html /home/web/public_html
+ADD src /home/web
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 

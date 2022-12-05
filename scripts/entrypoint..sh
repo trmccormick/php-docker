@@ -12,11 +12,12 @@ SERVERURL="/home/web"
 # install dependencies
 
 # setup server logs folder
-# mkdir -p $SERVERURL/data/log
+mkdir -p /data/serverlogs
 
 # remove existing error_log if exists
-# rm -f $SERVERURL/data/log/error_log
-# touch $SERVERURL/data/log/error_log
+mkdir -p $SERVERURL/data/serverlogs
+rm -f $SERVERURL/data/log/error_log
+touch $SERVERURL/data/log/error_log
 
 # php app.php my-migration-command    # run migrations
 # service cron start                  # start some services

@@ -23,9 +23,9 @@ services:
     links:
       - db
     volumes:
-      - ./data/log:/home/web/data/log
-      - ./data/gitpulls:/tmp/gitpulls
-      - ./src/public_html:/home/web/public_html   
+      - ./data/log:/var/log
+      - ./data/git:/tmp/git
+      - ./src:/home/web   
     env_file:
       - './env/.env.dev.web'
     ports:
