@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     git
 
 # Update apache site for our custom location 
-COPY ./serverConfiguration/000-default.conf /etc/apache2/sites-available/
+COPY ./config/000-default.conf /etc/apache2/sites-available/
 
 EXPOSE 80
 

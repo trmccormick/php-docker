@@ -1,9 +1,9 @@
-FROM php:8.0-apache
+FROM php:8.1.2-apache
 
 WORKDIR /home/web
-ADD src /home/web/
+ADD src/public_html /home/web/public_html
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install -y \
     git
 
 # Update apache site for our custom location 
-COPY ./000-default.conf /etc/apache2/sites-available/
+COPY ./config/000-default.conf /etc/apache2/sites-available/
 
 EXPOSE 80
+
+ADD ./scripts/entrypoint.sh /usr/bin/
+RUN chmod -v +x /usr/bin/entrypoint.sh
+
+# Start the service
+ENTRYPOINT ["bash", "/usr/bin/entrypoint.sh"]

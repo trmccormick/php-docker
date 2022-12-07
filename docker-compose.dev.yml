@@ -6,7 +6,7 @@ services:
    volumes:
       - mysql:/var/lib/mysql
       - ./SQLFiles/setup-docker.sql:/docker-entrypoint-initdb.d/setup-docker.sql
-      - ./serverConfiguration/mysql-config.cnf:/etc/mysql/conf.d/mysql-config.cnf
+      - ./config/mysql-config.cnf:/etc/mysql/conf.d/mysql-config.cnf
    env_file:
      - './env/.env.dev.db'
    ports:
@@ -23,8 +23,9 @@ services:
     links:
       - db
     volumes:
-      - ./data/log:/home/web/public_html/data/log
       - ./data/gitpulls:/tmp/gitpulls
+      - ./data/logs:/tmp/log
+      - ./config:/config
       - ./src/public_html:/home/web/public_html   
     env_file:
       - './env/.env.dev.web'
