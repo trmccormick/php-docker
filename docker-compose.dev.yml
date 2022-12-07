@@ -23,15 +23,10 @@ services:
     links:
       - db
     volumes:
-<<<<<<< HEAD
       - ./data/gitpulls:/tmp/gitpulls
       - ./data/logs:/tmp/log
       - ./config:/config
-=======
-      - ./data/log:/home/web/public_html/data/log
-      - ./data/gitpulls:/tmp/git
->>>>>>> b6f567305d30aabb90826f4a7c8d73c5c7d616ea
-      - ./src/public_html:/home/web/public_html   
+      - ./src/public_html:/home/web/public_html 
     env_file:
       - './env/.env.dev.web'
     ports:
