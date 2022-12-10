@@ -3,7 +3,8 @@
 # Variables
 GITDIR="/tmp/git"
 LOGDIR="/tmp/log"
-SERVERURL="/home/web/public_html"
+SERVERURL="/home/web/"
+DOCUMENTROOT="public_html"
 
 # Pull required github repos
 
@@ -11,12 +12,19 @@ SERVERURL="/home/web/public_html"
 
 # install dependencies
 
-# remove existing error_log if exists
-rm -f $LOGDIR/error_log
-touch $LOGDIR/error_log
+# remove existing error.log if exists
+rm -f $LOGDIR/error.log
+touch $LOGDIR/error.log
 
+# remove existing access.log if exists
+rm -f $LOGDIR/access.log
+touch $LOGDIR/access.log
+
+# run migrations and database imports
 # php app.php my-migration-command    # run migrations
-# service cron start                  # start some services
+
+# start some services
+# service cron start
 
 # start the apache2 service in the foreground to keep
 # the container from closing
