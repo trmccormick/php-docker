@@ -1,10 +1,10 @@
 # in /var/www/html/db.php
 <?php
 
-$host = getenv("DATABASE_HOST");
-$port = getenv("DATABASE_PORT");
-$usr = getenv("DATABASE_USER");
-$pwd = getenv("DATABASE_PASSWORD");
+$host = getenv("DB_HOST");
+$port = getenv("DB_PORT");
+$usr = getenv("DB_USER");
+$pwd = getenv("DB_PASSWORD");
 
 $dsn = 'mysql:host='.$host.';port='.$port;
 
