@@ -11,3 +11,12 @@ cleanup.sh
 
 # ignore mysql data folder
 mysql
+
+# ignore logs
+data/logs/error_log
+data/logs/error.log
+data/logs/access.log
+
+# ignore vendor folder
+src/php/vendor
+src/php/vendor/*
