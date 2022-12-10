@@ -18,5 +18,5 @@ data/logs/error.log
 data/logs/access.log
 
 # ignore vendor folder
-src/php/vendor
-src/php/vendor/*
+src/public_html/vendor
+src/public_html/vendor/*
